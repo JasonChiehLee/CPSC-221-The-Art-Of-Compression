@@ -20,7 +20,7 @@ int main()
 	// read in image
 	PNG origIm1;
 	origIm1.readFromFile("images/stanley-totem-poles.png");
-//	origIm1.resize(100, 100);
+
 	PNG origIm2;
 	origIm2.readFromFile("images/ubc-totem-poles.png");
 	PNG origIm3;
@@ -48,11 +48,10 @@ int main()
 	// prune the twoDtree
 	//where at least 100*X% of pixels are within Y of mean
 	
-	cout << "pruning" << endl;
 	tCopy1.prune(0.95, 10000); 
 	tCopy2.prune(0.95, 10000); 
 	tCopy3.prune(0.95, 3000); 
-	tCopy4.prune(0.95, 3000); 
+	tCopy4.prune(0.95, 3000);  
 	
 	// render the twoDtree
 	PNG ppic1 = tCopy1.render();
@@ -64,13 +63,7 @@ int main()
 	ppic2.writeToFile("images/prunedubctotem.png");
 	ppic3.writeToFile("images/prunedremb.png");
 	ppic4.writeToFile("images/prunedrosa.png");
-
-	//t1.prune(0.95, 1000);
-	/*PNG photo1 = t1.render();
-	cout << "done rendering" << endl;
-	photo1.writeToFile("images/prunedstanleytotem.png");
-*/	
-	cout << "WE DONT MAIN" << endl;
+	
 	return 0;
-}
+} 
 
